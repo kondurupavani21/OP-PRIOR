@@ -1,0 +1,338 @@
+{
+  "title": "MedQueue AI OPD Clinical Triage ML Evaluation Report",
+  "generated_at": "2026-10-29T08:57:58.545925+00:00",
+  "dataset": "triagegeist",
+  "train_samples": 28000,
+  "val_samples": 7000,
+  "champion_model": "model_b_random_forest",
+  "target_leakage_safeguards": [
+    "disposition",
+    "ed_los_hours"
+  ],
+  "models": [
+    {
+      "model_name": "model_a_logistic_regression",
+      "model_family": "Logistic Regression",
+      "feature_set": "Model A (Current Only)",
+      "training_duration_sec": 9.02,
+      "macro_f1": 0.8102,
+      "balanced_accuracy": 0.8313,
+      "accuracy": 0.784,
+      "per_class_f1": {
+        "Acuity_1": 0.9266666666666666,
+        "Acuity_2": 0.951853429910524,
+        "Acuity_3": 0.8375229920294298,
+        "Acuity_4": 0.6523427388040383,
+        "Acuity_5": 0.6826295167609926
+      },
+      "confusion_matrix": [
+        [
+          278,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          39,
+          1117,
+          25,
+          1,
+          0
+        ],
+        [
+          0,
+          43,
+          2049,
+          390,
+          53
+        ],
+        [
+          0,
+          0,
+          280,
+          1260,
+          474
+        ],
+        [
+          0,
+          0,
+          4,
+          198,
+          784
+        ]
+      ],
+      "artifact_file": "model_a_logistic_regression.joblib"
+    },
+    {
+      "model_name": "model_a_random_forest",
+      "model_family": "Random Forest",
+      "feature_set": "Model A (Current Only)",
+      "training_duration_sec": 1.4,
+      "macro_f1": 0.8394,
+      "balanced_accuracy": 0.8598,
+      "accuracy": 0.8161,
+      "per_class_f1": {
+        "Acuity_1": 0.9383561643835616,
+        "Acuity_2": 0.9558573853989814,
+        "Acuity_3": 0.8567985539264913,
+        "Acuity_4": 0.6966292134831461,
+        "Acuity_5": 0.7494664959453692
+      },
+      "confusion_matrix": [
+        [
+          274,
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          27,
+          1126,
+          29,
+          0,
+          0
+        ],
+        [
+          0,
+          39,
+          2133,
+          324,
+          39
+        ],
+        [
+          0,
+          0,
+          272,
+          1302,
+          440
+        ],
+        [
+          0,
+          0,
+          10,
+          98,
+          878
+        ]
+      ],
+      "artifact_file": "model_a_random_forest.joblib"
+    },
+    {
+      "model_name": "model_a_mlp",
+      "model_family": "Multilayer Perceptron (MLP)",
+      "feature_set": "Model A (Current Only)",
+      "training_duration_sec": 8.82,
+      "macro_f1": 0.8383,
+      "balanced_accuracy": 0.8401,
+      "accuracy": 0.8203,
+      "per_class_f1": {
+        "Acuity_1": 0.9333333333333333,
+        "Acuity_2": 0.9549702633814783,
+        "Acuity_3": 0.8660535785685726,
+        "Acuity_4": 0.7220995830267354,
+        "Acuity_5": 0.7150726089133701
+      },
+      "confusion_matrix": [
+        [
+          266,
+          17,
+          0,
+          0,
+          0
+        ],
+        [
+          21,
+          1124,
+          36,
+          1,
+          0
+        ],
+        [
+          0,
+          31,
+          2166,
+          324,
+          14
+        ],
+        [
+          0,
+          0,
+          259,
+          1472,
+          283
+        ],
+        [
+          0,
+          0,
+          6,
+          266,
+          714
+        ]
+      ],
+      "artifact_file": "model_a_mlp.joblib"
+    },
+    {
+      "model_name": "model_b_logistic_regression",
+      "model_family": "Logistic Regression",
+      "feature_set": "Model B (History-Aware)",
+      "training_duration_sec": 9.31,
+      "macro_f1": 0.8279,
+      "balanced_accuracy": 0.8463,
+      "accuracy": 0.8044,
+      "per_class_f1": {
+        "Acuity_1": 0.9362416107382551,
+        "Acuity_2": 0.9565587734241908,
+        "Acuity_3": 0.8557477110885046,
+        "Acuity_4": 0.6842915811088296,
+        "Acuity_5": 0.7064587973273943
+      },
+      "confusion_matrix": [
+        [
+          279,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          34,
+          1123,
+          24,
+          1,
+          0
+        ],
+        [
+          0,
+          39,
+          2103,
+          355,
+          38
+        ],
+        [
+          0,
+          0,
+          253,
+          1333,
+          428
+        ],
+        [
+          0,
+          0,
+          0,
+          193,
+          793
+        ]
+      ],
+      "artifact_file": "model_b_logistic_regression.joblib"
+    },
+    {
+      "model_name": "model_b_random_forest",
+      "model_family": "Random Forest",
+      "feature_set": "Model B (History-Aware)",
+      "training_duration_sec": 2.06,
+      "macro_f1": 0.855,
+      "balanced_accuracy": 0.8663,
+      "accuracy": 0.8319,
+      "per_class_f1": {
+        "Acuity_1": 0.9520426287744227,
+        "Acuity_2": 0.9628064243448858,
+        "Acuity_3": 0.8675616108996194,
+        "Acuity_4": 0.7238942685160953,
+        "Acuity_5": 0.768481629039398
+      },
+      "confusion_matrix": [
+        [
+          268,
+          15,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          1139,
+          31,
+          0,
+          0
+        ],
+        [
+          0,
+          30,
+          2165,
+          316,
+          24
+        ],
+        [
+          0,
+          0,
+          250,
+          1383,
+          381
+        ],
+        [
+          0,
+          0,
+          10,
+          108,
+          868
+        ]
+      ],
+      "artifact_file": "model_b_random_forest.joblib"
+    },
+    {
+      "model_name": "model_b_mlp",
+      "model_family": "Multilayer Perceptron (MLP)",
+      "feature_set": "Model B (History-Aware)",
+      "training_duration_sec": 4.24,
+      "macro_f1": 0.8477,
+      "balanced_accuracy": 0.8439,
+      "accuracy": 0.829,
+      "per_class_f1": {
+        "Acuity_1": 0.9481216457960644,
+        "Acuity_2": 0.9639065817409767,
+        "Acuity_3": 0.8723741577487119,
+        "Acuity_4": 0.732943469785575,
+        "Acuity_5": 0.7210743801652892
+      },
+      "confusion_matrix": [
+        [
+          265,
+          18,
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          1135,
+          36,
+          0,
+          0
+        ],
+        [
+          0,
+          20,
+          2201,
+          300,
+          14
+        ],
+        [
+          0,
+          0,
+          272,
+          1504,
+          238
+        ],
+        [
+          0,
+          0,
+          2,
+          286,
+          698
+        ]
+      ],
+      "artifact_file": "model_b_mlp.joblib"
+    }
+  ]
+}

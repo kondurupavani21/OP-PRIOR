@@ -1,0 +1,30 @@
+# Node.js dependencies
+node_modules/
+
+# Production build output
+dist/
+dist-ssr/
+
+# Environment variables (copy from .env.example)
+.env
+.env.local
+.env.*.local
+
+# Vite temp files
+*.local
+
+# Editor artifacts
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.sw?
+Thumbs.db
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*

@@ -1,24 +1,57 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# =====================================================================
+# MedQueue AI - Root .gitignore
+# =====================================================================
 
-node_modules
-dist
-dist-ssr
-*.local
+# -------------------------------------------------------
+# Frontend (frontend/)
+# -------------------------------------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.env
+frontend/*.local
 
-# Editor directories and files
+# -------------------------------------------------------
+# Backend (backend/)
+# -------------------------------------------------------
+backend/.env
+backend/.venv/
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/**/*.pyo
+backend/.pytest_cache/
+backend/medqueue.db
+backend/uploads/documents/*
+!backend/uploads/documents/.gitkeep
+
+# -------------------------------------------------------
+# Datasets (backend/data/raw/ - large raw files)
+# -------------------------------------------------------
+backend/data/raw/
+
+# -------------------------------------------------------
+# Editor and OS files
+# -------------------------------------------------------
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+Thumbs.db
+
+# -------------------------------------------------------
+# Logs
+# -------------------------------------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs/

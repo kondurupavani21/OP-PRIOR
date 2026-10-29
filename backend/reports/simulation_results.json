@@ -1,0 +1,87 @@
+{
+  "simulated_at": "2026-10-29T09:47:21.856972+00:00",
+  "parameters": {
+    "num_doctors": 3,
+    "shift_hours": 6.0,
+    "arrival_rate_per_hour": 16.0,
+    "replications": 8,
+    "random_seed": 100
+  },
+  "empirical_calibration_baseline": {
+    "empirical_mean_wait": 35.26,
+    "empirical_std_wait": 14.74,
+    "empirical_median_wait": 35.0,
+    "empirical_p90_wait": 56.0,
+    "total_records": 9216.0
+  },
+  "policies": [
+    {
+      "policy_name": "FCFS",
+      "policy_description": "First-Come, First-Served: strictly serves patients by arrival sequence without clinical acuity consideration.",
+      "overall_mean_wait_mins": {
+        "mean": 53.1,
+        "ci_lower": 35.6,
+        "ci_upper": 70.6,
+        "std": 25.25
+      },
+      "p95_wait_mins": 98.75,
+      "max_wait_mins": 109.29,
+      "per_acuity_mean_wait": {
+        "Acuity_1": 47.0,
+        "Acuity_2": 51.83,
+        "Acuity_3": 53.67,
+        "Acuity_4": 53.52,
+        "Acuity_5": 49.94
+      },
+      "starvation_count": 19.62,
+      "patients_served": 95.6,
+      "doctor_utilization_pct": 94.6
+    },
+    {
+      "policy_name": "CONVENTIONAL_PRIORITY",
+      "policy_description": "Conventional Static ESI Priority: prioritizes by acuity only, causing low-acuity patients to suffer indefinite starvation during surges.",
+      "overall_mean_wait_mins": {
+        "mean": 71.39,
+        "ci_lower": 47.24,
+        "ci_upper": 95.53,
+        "std": 34.84
+      },
+      "p95_wait_mins": 257.11,
+      "max_wait_mins": 361.24,
+      "per_acuity_mean_wait": {
+        "Acuity_1": 2.18,
+        "Acuity_2": 4.61,
+        "Acuity_3": 22.09,
+        "Acuity_4": 130.48,
+        "Acuity_5": 220.54
+      },
+      "starvation_count": 26.12,
+      "patients_served": 95.6,
+      "doctor_utilization_pct": 94.8
+    },
+    {
+      "policy_name": "DYNAMIC_HYBRID",
+      "policy_description": "MedQueue Dynamic Hybrid: blends clinical urgency with non-linear waiting time aging and starvation ceiling safeguard.",
+      "overall_mean_wait_mins": {
+        "mean": 60.55,
+        "ci_lower": 39.75,
+        "ci_upper": 81.36,
+        "std": 30.02
+      },
+      "p95_wait_mins": 133.56,
+      "max_wait_mins": 158.74,
+      "per_acuity_mean_wait": {
+        "Acuity_1": 3.02,
+        "Acuity_2": 22.71,
+        "Acuity_3": 52.03,
+        "Acuity_4": 85.92,
+        "Acuity_5": 97.44
+      },
+      "starvation_count": 19.75,
+      "patients_served": 95.6,
+      "doctor_utilization_pct": 94.8
+    }
+  ],
+  "recommended_policy": "DYNAMIC_HYBRID",
+  "policy_comparison_summary": "Under simulated OPD load (16.0 pts/hr with 3 physicians over 6.0h), Dynamic Hybrid Queue achieved superior balance: critical Acuity 1 wait was maintained under 3.02 mins (vs 47.0 mins in FCFS), while low-acuity starvation was reduced to 19.75 patients (vs 26.12 in Conventional Priority). Calibrated empirical baseline from Hospital ER data: 35.26 mins."
+}

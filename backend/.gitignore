@@ -1,0 +1,38 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Database & runtime files
+*.db
+*.sqlite
+*.sqlite3
+medqueue.db
+
+# Environment variables
+.env
+
+# IDE & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+.DS_Store
+
+# Test caches
+.pytest_cache/
+
+# Uploaded medical documents (keep directory, ignore content)
+uploads/documents/*
+!uploads/documents/.gitkeep
+
+# Raw datasets (large files — excluded from version control)
+data/raw/
